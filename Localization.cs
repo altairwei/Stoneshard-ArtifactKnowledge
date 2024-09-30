@@ -83,6 +83,12 @@ public class Localization
         string text_zh = @"~w~$~/~的鉴定能力提升到了~lg~$%~/~！";
         logList.Add($"{id};{text_en};{text_en};{text_zh};" + string.Concat(Enumerable.Repeat($"{text_en};", 9)));
 
+        id = "verrenIdentifiedItem";
+        text_en = @"~w~$~/~ identified $ for you.";
+        text_zh = @"~w~$~/~帮你鉴定了$。";
+        logList.Add($"{id};{text_en};{text_en};{text_zh};" + string.Concat(Enumerable.Repeat($"{text_en};", 9)));
+
+
         string logtextend = ";" + string.Concat(Enumerable.Repeat("text_end;", 12));
 
         List<string> log_table = ModLoader.GetTable("gml_GlobalScript_table_log_text");

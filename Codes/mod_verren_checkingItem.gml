@@ -9,7 +9,7 @@ function mod_verren_checkingItem()
     if scr_chance_value(_chance)
     {
         _story_adress_array = [argument2]
-        if (_chance <= 30)
+        if (_chance < 30)
         {
             var _new_chance = _chance + 1
             ds_map_replace(global.characterDataMap, "chance_of_identification", _new_chance)

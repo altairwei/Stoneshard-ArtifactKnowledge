@@ -49,7 +49,7 @@ public class ArtifactKnowledge : Mod
             _answer = _ret[1]
             break
         case 30:
-            var _ret = mod_verren_identifyItem(_story_adress_array, _answer)
+            var _ret = mod_verren_identifyItem(_story_adress_array, _answer, 1)
             _story_adress_array = _ret[0]
             _answer = _ret[1]
             _action = [""Exit""]
