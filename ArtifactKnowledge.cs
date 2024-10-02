@@ -91,6 +91,34 @@ public class ArtifactKnowledge : Mod
             break")
             .Save();
 
+        Msl.LoadGML("gml_GlobalScript_scr_npc_lines_verren_brynn")
+            .MatchFromUntil(@"                    _answer = scr_add_answer_to_dialog(""verrenAboutBrynn00_pc"")", @"                    _action = [""Continue""]")
+            .InsertBelow("                    mod_push_identify_dialog(_story_adress_array, _answer, 15)")
+            .MatchFromUntil("        case 14:", "            break")
+            .InsertBelow(@"
+        case 15:
+            var _ret = mod_verren_showItem(_story_adress_array, _answer, 16, 1)
+            _story_adress_array = _ret[0]
+            _answer = _ret[1]
+            break
+        case 16:
+            var _ret = mod_verren_checkingItem(_story_adress_array, _answer, 17, 18)
+            _story_adress_array = _ret[0]
+            _answer = _ret[1]
+            break
+        case 17:
+            var _ret = mod_verren_identifyItem(_story_adress_array, _answer, 1)
+            _story_adress_array = _ret[0]
+            _answer = _ret[1]
+            _action = [""Exit""]
+            break
+        case 18:
+            story_text = ""askVerrenIdentify_failure""
+            _answer = scr_add_answer_to_dialog(""askVerrenIdentify_goodbye"")
+            _story_adress_array = [1]
+            break")
+            .Save();
+
         Localization.DialogLinesPatching();
         Localization.ActionLogsPatching();
     }
