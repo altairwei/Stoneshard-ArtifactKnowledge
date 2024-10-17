@@ -19,5 +19,7 @@ function mod_verren_checkingItem()
     else
         _story_adress_array = [argument3]
 
+    scr_allturn()
+
     return [_story_adress_array, _answer];
 }
