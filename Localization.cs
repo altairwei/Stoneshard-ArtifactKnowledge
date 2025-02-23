@@ -10,7 +10,7 @@ public class Localization
     {
         Msl.InjectTableDialogLocalization(
             new LocalizationSentence(
-                "askVerrenIdentify",
+                "askVerrenIdentify_pc",
                 new Dictionary<ModLanguage, string>() {
                     {ModLanguage.English, "Help me identify something?"},
                     {ModLanguage.Chinese, "帮我鉴定个东西？"}
@@ -52,7 +52,7 @@ public class Localization
                 }
             ),
             new LocalizationSentence(
-                "askVerrenIdentify_thankVerren",
+                "askVerrenIdentify_thankVerren_pc",
                 new Dictionary<ModLanguage, string>() {
                     {ModLanguage.English, "Thank you so much Verren! You are so knowledgeable!"},
                     {ModLanguage.Chinese, "太感谢你了维伦！你真是见多识广啊！"}
@@ -66,10 +66,10 @@ public class Localization
                 }
             ),
             new LocalizationSentence(
-                "askVerrenIdentify_goodbye",
+                "askVerrenIdentify_goodbye_pc",
                 new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, "All right."},
-                    {ModLanguage.Chinese, "好吧。"}
+                    {ModLanguage.English, "All right... But I have something else."},
+                    {ModLanguage.Chinese, "好吧... 但我还有其他事。"}
                 }
             )
         );
@@ -91,8 +91,8 @@ public class Localization
 
         string logtextend = ";" + string.Concat(Enumerable.Repeat("text_end;", 12));
 
-        List<string> log_table = ModLoader.GetTable("gml_GlobalScript_table_log_text");
+        List<string> log_table = ModLoader.GetTable("gml_GlobalScript_table_log");
         log_table.InsertRange(log_table.IndexOf(logtextend), logList);
-        ModLoader.SetTable(log_table, "gml_GlobalScript_table_log_text");
+        ModLoader.SetTable(log_table, "gml_GlobalScript_table_log");
     }
 }
