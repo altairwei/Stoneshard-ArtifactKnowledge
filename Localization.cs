@@ -59,6 +59,13 @@ public class Localization
                 }
             ),
             new LocalizationSentence(
+                "caravanVerrenIdentify_thankVerren_pc",
+                new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, "Thank you so much Verren! You are so knowledgeable!"},
+                    {ModLanguage.Chinese, "太感谢你了维伦！你真是见多识广啊！"}
+                }
+            ),
+            new LocalizationSentence(
                 "askVerrenIdentify_failure",
                 new Dictionary<ModLanguage, string>() {
                     {ModLanguage.English, "I've been looking at this for a while and I still can't figure this stuff out. I'm so sorry."},
@@ -70,6 +77,14 @@ public class Localization
                 new Dictionary<ModLanguage, string>() {
                     {ModLanguage.English, "All right... But I have something else."},
                     {ModLanguage.Chinese, "好吧... 但我还有其他事。"}
+                }
+            ),
+
+            new LocalizationSentence(
+                "caravanVerrenIdentify",
+                new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, "I had some time on my hands these past few days, so I went over those magic items you left in the box a bunch of times. #Turns out I actually identified a few enchantment effects. They're nothing too crazy, but let me fill you in…"},
+                    {ModLanguage.Chinese, "我这几天有空，把你放在箱子里的那些魔法物品翻来覆去地研究了好几遍，还真让我鉴定出了一些附魔效果。#就这些小玩意儿，我给你说说吧..."}
                 }
             )
         );
