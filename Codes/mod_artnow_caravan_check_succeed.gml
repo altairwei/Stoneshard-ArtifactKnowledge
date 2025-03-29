@@ -9,9 +9,9 @@ function mod_artnow_caravan_check_succeed()
             scr_npc_set_global_info("verrenCaravanIdentifyCD", _timestamp)
         }
 
-        var _hoursPassed = scr_timeGetPassed(_timestamp, "hours")
+        var _hoursPassed = scr_timeGetPassed(_timestamp, 2)
         var _items = mod_artknow_get_stash_unidentified()
-        var _num = array_length(_items)
+        var _num = ds_list_size(_items)
         var _count = floor(_hoursPassed / 24)
         var _success = 0
 
@@ -19,7 +19,7 @@ function mod_artnow_caravan_check_succeed()
         {
             _count--
             _num--
-            if scr_chance_value(100)
+            if scr_chance_value(global.caravan_chance_identify)
                 _success++
         }
 
@@ -34,5 +34,7 @@ function mod_artnow_caravan_check_succeed()
         {
             return false
         }
+
+        ds_list_destroy(_items)
     }
 }

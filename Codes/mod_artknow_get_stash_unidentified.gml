@@ -2,8 +2,8 @@ function mod_artknow_get_stash_unidentified()
 {
     var _stash_array = [global.caravanStashDataList1, global.caravanStashDataList2, global.caravanStashDataList3, global.caravanStashDataList4];
     var _stash_array_size = array_length(_stash_array);
-    
-    var _unidentified_items = []
+
+    var _unidentified_items = ds_list_create()
     for (var i = 0; i < _stash_array_size; i++)
     {
         var _stash_list = _stash_array[i]
@@ -15,11 +15,11 @@ function mod_artknow_get_stash_unidentified()
             var _data = ds_list_find_value(_item, 1)
             if (!ds_map_find_value_ext(_data, "identified", true))
             {
-                var _record = {}
-                _record.stash_list = _stash_list
-                _record.index = j
-                _record.item = _item
-                array_push(_unidentified_items, _record)
+                var _record = ds_map_create()
+                ds_map_add(_record, "stash_list", _stash_list)
+                ds_map_add(_record, "index", j)
+                ds_map_add(_record, "item", _item)
+                ds_list_add(_unidentified_items, _record)
             }
         }
     }
